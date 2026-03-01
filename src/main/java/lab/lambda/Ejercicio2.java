@@ -9,7 +9,7 @@ public class Ejercicio2 {
             String procesar(String frase, int repeticiones);
         }
 
-        ProcesadorTexto miProcesador = new ProcesadorTexto() {
+        ProcesadorTexto miProcesador = new ProcesadorTexto() { // Esto es una clase anónima.
             @Override
             public String procesar(String frase, int repeticiones) {
                 return frase.toUpperCase().repeat(repeticiones);
@@ -40,5 +40,28 @@ public class Ejercicio2 {
         // Ejemplo: Repite la frase N veces separada por espacios
         ProcesadorTexto version3 = (f, n) -> (f + " ").repeat(n).trim();
         System.out.println(version3.procesar("hola", 3)); // Salida: hola hola hola
+
+        // SEGUNDA PARTE: Crea una interfaz funcional llamada "OperacionMatematica" con un método que reciba dos números y devuelva un resultado. Luego, implementa esta interfaz usando Lambdas para realizar operaciones como suma, resta.
+        @FunctionalInterface
+        interface OperacionMatematica{
+            int operar(int a, int b);
+        }
+
+        OperacionMatematica operacion1 = (a , b) ->  a + b;
+        int resultado = operacion1.operar(3 , 4);
+        System.out.println("El resultado de la primera operación es: " +  resultado);
+
+        OperacionMatematica operacion2 = (a , b) -> a - b;
+        resultado = operacion2.operar(10 , 8);
+        System.out.println("El resultado de la segunda operación es: " + resultado);
+
+        OperacionMatematica operacion3 = (a , b) -> a * b;
+        System.out.println("El resultado de la tercera operacion es: " + operacion3.operar(8 , 3));
+
+        OperacionMatematica operacion4 = (a , b) -> {
+            int resultado4 = a * 3 + b * 2 + 5 * a * b;
+            return resultado4;
+        };
+        System.out.println("El resultado de la cuarta operacion es: " + operacion4.operar(2 , 4));
     }
 }

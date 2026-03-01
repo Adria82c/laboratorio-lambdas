@@ -6,14 +6,27 @@ En lugar de inventar nombres nuevos cada vez, Java te da unas piezas de **LEGO u
 
 ---
 
-## Tabla de Interfaces Funcionales Estándar
+## Detalle de Interfaces Funcionales Estándar
 
-| Interfaz | ¿Qué hace? | Firma (Sintaxis Lambda) | Ejemplo del mundo real |
-| :--- | :--- | :--- | :--- |
-| **`Predicate<T>`** | **Filtra.** Recibe algo y devuelve `true` o `false`. | `objeto -> booleano` | `user -> user.esMayorDeEdad()` |
-| **`Function<T, R>`** | **Transforma.** Recibe un tipo A y devuelve un tipo B. | `objeto -> resultado` | `texto -> texto.length()` |
-| **`Consumer<T>`** | **Ejecuta.** Recibe algo, hace una acción y **no devuelve nada**. | `objeto -> void` | `msg -> System.out.println(msg)` |
-| **`Supplier<T>`** | **Genera.** No recibe nada y **devuelve un objeto**. | `() -> objeto` | `() -> new Usuario()` |
+### 1. Predicate<T>
+* **¿Qué hace?:** **Filtra.** Evalúa una condición sobre un objeto.
+* **Firma (Sintaxis Lambda):** `objeto -> booleano`
+* **Ejemplo del mundo real:** `user -> user.esMayorDeEdad()`
+
+### 2. Function<T, R>
+* **¿Qué hace?:** **Transforma.** Toma un objeto de tipo T y lo convierte en un resultado de tipo R.
+* **Firma (Sintaxis Lambda):** `objeto -> resultado`
+* **Ejemplo del mundo real:** `texto -> texto.length()`
+
+### 3. Consumer<T>
+* **¿Qué hace?:** **Ejecuta.** Recibe un objeto para realizar una acción con él, pero no devuelve nada (void).
+* **Firma (Sintaxis Lambda):** `objeto -> void`
+* **Ejemplo del mundo real:** `msg -> System.out.println(msg)`
+
+### 4. Supplier<T>
+* **¿Qué hace?:** **Genera.** No recibe ningún parámetro, pero produce o suministra un objeto de tipo T.
+* **Firma (Sintaxis Lambda):** `() -> objeto`
+* **Ejemplo del mundo real:** `() -> new Usuario()`
 
 ---
 
